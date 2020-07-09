@@ -1,0 +1,569 @@
+:root {
+    --pinkrgb: 235, 40, 70;
+    --pink: rgb(var(--pinkrgb));
+    --bs: 1px 2px 20px 7px rgba(0, 0, 0, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: source sans pro, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    background: #eee;
+}
+
+div {
+    background: #eee;
+}
+
+a {
+    text-decoration: none;
+    transition: .4s all ease;
+}
+
+p {
+    font-size: 18px;
+    line-height: 175%;
+    width: calc(100vw - 20%);
+    text-align: center;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    font-weight: 600;
+    position: relative;
+}
+
+.title::after {
+    display: block;
+    content: ' ';
+    background: var(--pink);
+    height: 4px;
+    width: 100px;
+    margin: 10px auto 20px;
+}
+
+nav {
+    height: 60px;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    background: #222;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: var(--bs);
+}
+
+nav a {
+    color: #eee;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 0 30px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav a:hover, nav a:focus, nav a:active {
+    background: var(--pink);
+    transform: translateX(5px);
+}
+
+.lander {
+    height: 80vh;
+    width: 100vw;
+    background: url(../media/background.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.lander::after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    background: rgba(34, 34, 34, 0.7);
+    z-index: 1;
+}
+
+.lander h1 {
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 100px;
+    color: #f7f7f7;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 1100px) {
+    nav {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .lander h1 {
+        font-size: 70px;
+    }
+}
+
+.lander p {
+    display: block;
+    margin: 10px auto;
+    font-size: 25px;
+    color: #f7f7f7;
+    z-index: 2;
+}
+
+.lander a {
+    display: inline-block;
+    margin: 40px auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: var(--pink);
+    padding: 10px 20px;
+    font-weight: 600;
+    color: #f7f7f7;
+    font-size: 20px;
+    border-radius: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.lander a:hover, .lander a:focus, .lander a:active {
+    background: #f7f7f7;
+    color: #222;
+    transform: translateY(4px);
+}
+
+.w-container {
+    height: 150px;
+    transform: translate(-50%, 0);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 2;
+}
+
+@keyframes fade-out {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+.prizes-grid {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.prizes-grid > div {
+    height: 250px;
+    width: 250px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 50px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .prizes-grid {
+        flex-direction: column;
+    }
+    
+    .prizes-grid > div {
+        margin: 0 auto;
+    }
+}
+
+
+.prizes-grid > div > div {
+    height: 150px;
+    width: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.p1 {
+    background: url(../media/gold.png);
+}
+
+.p2 {
+    background: url(../media/silver.png);
+}
+
+.p3 {
+    background: url(../media/bronze.png);
+}
+
+.prizes-grid > div > p {
+    color: #222;
+    font-size: 25px;
+    position: relative;
+    height: auto;
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.judges {
+    padding: 0 20px;
+    display: none;
+}
+
+.judges-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(250px, auto);
+    grid-gap: 2em;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+    .judges-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .judges-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.j {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    background: url(../media/bronze.png);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    transition: .4s all ease;
+}
+
+.j:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.j > .over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #eee;
+    padding: 30px;
+    opacity: 0;
+    transition: .4s all ease;
+}
+
+.j:hover > .over {
+    opacity: 1;
+}
+
+.j > .over > p {
+    height: auto;
+    width: auto;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.j > .over > i {
+    color: var(--pink);
+    position: relative;
+    font-size: 25px;
+    transition: .4s all ease;
+}
+
+.j > .over > i:hover {
+    transform: scale(1.5);
+}
+
+.sponsors {
+    position: relative;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.sponsors > p {
+    margin-bottom: 20px;
+}
+
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-auto-rows: minmax(400px, auto);
+    grid-gap: 2em;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.left {
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.left > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: url(../media/transparent.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: .4s all ease;
+}
+
+.left > div:hover {
+    transform: translate(-50%, -40%);
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 10px 40px 10px;
+    overflow: hidden;
+}
+
+.right > h1 {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+.right > p {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.right > a {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    background: var(--pink);
+    color: #eee;
+    border-radius: 40px;
+    box-shadow: var(--bs);
+    position: relative;
+    transition: .4s all ease;
+    display: inline-block;
+}
+
+.right > a > i {
+    transform: translate(2px, 20%);
+    transition: .4s all ease;
+}
+
+.right > a:hover > i {
+    transform: translate(8px, 20%);
+}
+
+@media only screen and (max-width: 1200px) {
+    .sponsors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .right > h1 {
+        margin-bottom: 20px;
+    }
+    
+    .right > p {
+        margin-bottom: 40px;
+        width: 100%;
+    }
+}
+
+footer {
+    padding: 10px;
+    background: #222;
+    color: #eee;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.about {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.about a {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    background: var(--pink);
+    color: #eee;
+    border-radius: 40px;
+    box-shadow: var(--bs);
+    position: relative;
+    transition: .4s all ease;
+    display: inline-block;
+    margin: 20px auto;
+}
+
+.about a:hover {
+    background: #222;
+}
+
+.register {
+    position: relative;
+    padding: 20px;
+}
+
+.register > p {
+    font-size: 22px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.register > p > a {
+    color: var(--pink);
+    position: relative;
+    transition: .4s all ease;
+    overflow: hidden;
+}
+
+.register > p > a::after {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(0);
+    height: 4px;
+    width: 100%;
+    background-color: var(--pink);
+    display: block;
+    content: ' ';
+    transform-origin: left;
+    transition: .4s all ease;
+}
+
+.register > p > a:hover::after {
+    transform: translate(-50%, -50%) scaleX(1);
+}
+
+.register > .reqs {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 500px;
+}
+
+.reqs h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.reqs div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.reqs p {
+    width: 50%;
+    list-style: circle;
+    text-align: left;
+    position: relative;
+}
+
+.reqs p i {
+    transform: translate(0, 20%);
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .reqs p {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .reqs p {
+        width: 90%;
+    }
+}
