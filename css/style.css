@@ -264,7 +264,6 @@ nav a:hover, nav a:focus, nav a:active {
 
 .judges {
     padding: 0 20px;
-    display: none;
 }
 
 .judges-grid {
@@ -298,6 +297,33 @@ nav a:hover, nav a:focus, nav a:active {
     background-position: center center;
     position: relative;
     transition: .4s all ease;
+    border: 2px solid #222;
+}
+
+.ps {
+    background: url(../media/pshrivastiva.jpg);
+    background-size: contain;
+    background-position: center center;
+}
+
+.fs {
+    background: url(../media/fsu.jpg);
+    background-size: contain;
+    background-position: center center;
+}
+
+.jb {
+    background: url(../media/jbhargav.jpg);
+}
+
+.as {
+    background: url(../media/asharma.jpg);
+}
+
+.ss {
+    background: url(../media/sseshadri.png);
+    background-size: contain;
+    background-position: 20px;
 }
 
 .j:hover {
@@ -337,15 +363,15 @@ nav a:hover, nav a:focus, nav a:active {
     font-size: 20px;
 }
 
-.j > .over > i {
+.j > .over > a {
     color: var(--pink);
     position: relative;
     font-size: 25px;
     transition: .4s all ease;
 }
 
-.j > .over > i:hover {
-    transform: scale(1.5);
+.j > .over > a:hover {
+    transform: scale(1.1);
 }
 
 .sponsors {
